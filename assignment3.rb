@@ -8,12 +8,12 @@ class Player
   def do_battle
     @health_points -= 1
     if @health_points == 0
-      @lives - 1
+      @lives -= 1
       if @lives == 0
         restart
-      else
-        @health_points = 10
       end
+        @health_points = 10
+
     end
   end
   def restart
@@ -33,6 +33,7 @@ class Player
       @gold_coins -= 10
       if @score == 10
         level_up
+        @score -= 10
       end
     end
   end
